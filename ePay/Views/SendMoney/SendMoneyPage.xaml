@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ePay.Views.SendMoney.SendMoneyPage">
+    <StackLayout Padding="20">
+        <Label Text="Recipient Phone Number" />
+        <Entry x:Name="RecipientPhoneNumberEntry" />
+
+        <Label Text="Amount" />
+        <Entry x:Name="AmountEntry" />
+
+        <Button x:Name="NextButton" Text="Next" Clicked="OnNextButtonClicked" />
+    </StackLayout>
+</ContentPage>

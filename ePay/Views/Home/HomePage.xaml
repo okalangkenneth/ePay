@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ePay.Views.Home.HomePage"
+             Title="HomePage">
+    <Grid Padding="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        
+        <StackLayout Orientation="Horizontal" Grid.Row="0">
+            <Label x:Name="AccountBalanceLabel"
+                   FontSize="36"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center" />
+            <Button x:Name="AccountManagementButton"
+                    Text="⚙️"
+                    FontSize="36"
+                    HorizontalOptions="EndAndExpand"
+                    Clicked="OnAccountManagementButtonClicked" />
+        </StackLayout>
+
+        <Label x:Name="AccountBalanceDispaly"
+               FontSize="36"
+               FontAttributes="Bold"
+               HorizontalOptions="Center"
+               Grid.Row="0" />
+
+        <ListView x:Name="RecentTransactionsListView"
+                  Grid.Row="1">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout>
+                            <Label Text="{Binding RecipientName}" />
+                            <Label Text="{Binding TransactionDate}" />
+                            <Label Text="{Binding Amount}" />
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Button x:Name="SendMoneyButton"
+                    Text="Send Money"
+                    Grid.Column="0"
+                    Clicked="OnSendMoneyButtonClicked" />
+
+            <Button x:Name="ViewTransactionHistoryButton"
+                    Text="View Transaction History"
+                    Grid.Column="1"
+                    Clicked="OnViewTransactionHistoryButtonClicked" />
+        </Grid>
+    </Grid>
+</ContentPage>

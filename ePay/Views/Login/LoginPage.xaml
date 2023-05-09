@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ePay.Views.Login.LoginPage">
+    <StackLayout Padding="20">
+        <Label Text="Phone Number" />
+        <Entry x:Name="PhoneNumberEntry" />
+
+        <Label Text="Password" />
+        <Entry x:Name="PasswordEntry" IsPassword="True" />
+
+        <Button x:Name="LogInButton" Text="Log In" Clicked="OnLoginButtonClicked" />
+
+        <Label x:Name="ForgotPasswordLabel"
+               Text="Forgot Password?"
+               FontAttributes="Bold"
+               TextColor="Blue"
+               HorizontalOptions="Center"
+               VerticalOptions="CenterAndExpand" />
+    </StackLayout>
+</ContentPage>
+
